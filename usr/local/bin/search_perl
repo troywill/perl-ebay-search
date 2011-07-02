@@ -13,9 +13,10 @@ print "Searching with $url\n";
 
 while ( my $oResult = $oSearch->next_result() ) {
     print $oResult->description, "\n";
-    my $url = $oResult->url;
+    my $search_url = $oResult->url;
     print "url: ", $oResult->url,         "\n";
-    print $chromium "chromium '$url' &\n";
+    print $chromium  "# $oResult->url\n";
+    print $chromium "chromium '$search_url' &\n";
     print $chromium "sleep 10\n";
     print "end_date: ", $oResult->end_date,    "\n";
     print "bid_count: ", $oResult->bid_count,   "\n";
